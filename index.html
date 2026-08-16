@@ -3,79 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر التجربة - Demo Store</title>
+    <title>متجر التدريب - الصفحة الرئيسية</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; margin: 0; padding: 20px; text-align: center; }
-        .container { max-width: 500px; margin: auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .product-img { width: 100%; height: 200px; background-color: #e5e7eb; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; color: #6b7280; margin-bottom: 15px; }
-        .price { font-size: 22px; color: #059669; font-weight: bold; margin: 10px 0; }
-        .btn { width: 100%; padding: 12px; margin: 8px 0; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.2s; }
-        .btn-add { background-color: #2563eb; color: white; }
-        .btn-add:hover { background-color: #1d4ed8; }
-        .btn-checkout { background-color: #059669; color: white; display: none; }
-        .btn-checkout:hover { background-color: #047857; }
-        .checkout-form { display: none; margin-top: 20px; text-align: right; border-top: 1px solid #e5e7eb; padding-top: 15px; }
-        .form-group { margin-bottom: 10px; }
-        .form-group label { display: block; margin-bottom: 5px; font-size: 14px; }
-        .form-group input { width: 95%; padding: 8px; border: 1px solid #d1d5db; border-radius: 4px; }
-        .thank-you { display: none; background: #ecfdf5; color: #065f46; padding: 20px; border-radius: 8px; margin-top: 15px; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f8fafc; margin: 0; padding: 20px; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .products-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; max-width: 1000px; margin: auto; }
+        .product-card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; width: 280px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .product-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
+        .product-card h3 { font-size: 18px; margin: 10px 0 5px; color: #1e293b; }
+        .price { font-size: 20px; color: #16a34a; font-weight: bold; margin-bottom: 15px; }
+        .btn { display: block; width: 100%; padding: 10px 0; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; text-decoration: none; box-sizing: border-box; }
+        .btn-add { background-color: #2563eb; color: white; margin-bottom: 8px; }
+        .btn-checkout { background-color: #16a34a; color: white; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h2>ساعة ذكية - Smart Watch</h2>
-        <div class="product-img">صورة المنتج</div>
-        <div class="price">500 ج.م</div>
-
-        <!-- أزرار الأحداث -->
-        <button id="btn-add-to-cart" class="btn btn-add">إضافة إلى السلة (Add to Cart)</button>
-        <button id="btn-checkout" class="btn btn-checkout">إتمام الشراء (Checkout)</button>
-
-        <!-- نموذج إتمام الطلب -->
-        <div id="checkout-form" class="checkout-form">
-            <h3>بيانات الشحن</h3>
-            <div class="form-group">
-                <label>الاسم الكامل:</label>
-                <input type="text" id="cust-name" placeholder="أدخل اسمك">
-            </div>
-            <div class="form-group">
-                <label>رقم الهاتف:</label>
-                <input type="tel" id="cust-phone" placeholder="أدخل رقم هاتفك">
-            </div>
-            <button id="btn-submit-order" class="btn btn-add" style="background-color: #10b981;">تأكيد الطلب (Purchase)</button>
-        </div>
-
-        <!-- رسالة الشكر (Thank You) -->
-        <div id="thank-you-msg" class="thank-you">
-            🎉 تم استلام طلبك بنجاح! شكرًا لتسوقك معنا.
-        </div>
+    <div class="header">
+        <h1>🛍️ متجر التكنولوجيا العصرية</h1>
+        <p>اختر من أحدث المنتجات واختبر تجربة الشراء والتتبع الحقيقية</p>
     </div>
 
-    <script>
-        // تفاعلات بسيطة عشان التجربة تكون حية
-        const addToCartBtn = document.getElementById('btn-add-to-cart');
-        const checkoutBtn = document.getElementById('btn-checkout');
-        const checkoutForm = document.getElementById('checkout-form');
-        const submitOrderBtn = document.getElementById('btn-submit-order');
-        const thankYouMsg = document.getElementById('thank-you-msg');
+    <div class="products-grid">
+        <!-- المنتج الأول -->
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="ساعة ذكية">
+            <h3>ساعة ذكية - Smart Watch</h3>
+            <div class="price">750 ج.م</div>
+            <button class="btn btn-add" onclick="alert('تمت إضافة الساعة للسلة!')">إضافة إلى السلة (AddToCart)</button>
+            <a href="checkout.html?product=SmartWatch&price=750" class="btn btn-checkout">شراء الآن (Checkout)</a>
+        </div>
 
-        addToCartBtn.addEventListener('click', function() {
-            alert('تمت إضافة المنتج للسلة!');
-            checkoutBtn.style.display = 'block';
-        });
+        <!-- المنتج الثاني -->
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" alt="سماعة لاسلكية">
+            <h3>سماعة بلوتوث - Wireless Headphones</h3>
+            <div class="price">1,200 ج.م</div>
+            <button class="btn btn-add" onclick="alert('تمت إضافة السماعة للسلة!')">إضافة إلى السلة (AddToCart)</button>
+            <a href="checkout.html?product=Headphones&price=1200" class="btn btn-checkout">شراء الآن (Checkout)</a>
+        </div>
 
-        checkoutBtn.addEventListener('click', function() {
-            checkoutForm.style.display = 'block';
-        });
-
-        submitOrderBtn.addEventListener('click', function() {
-            checkoutForm.style.display = 'none';
-            addToCartBtn.style.display = 'none';
-            checkoutBtn.style.display = 'none';
-            thankYouMsg.style.display = 'block';
-        });
-    </script>
+        <!-- المنتج الثالث -->
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500" alt="حذاء رياضي">
+            <h3>حذاء رياضي - Running Shoes</h3>
+            <div class="price">950 ج.م</div>
+            <button class="btn btn-add" onclick="alert('تمت إضافة الحذاء للسلة!')">إضافة إلى السلة (AddToCart)</button>
+            <a href="checkout.html?product=Shoes&price=950" class="btn btn-checkout">شراء الآن (Checkout)</a>
+        </div>
+    </div>
 
 </body>
 </html>
