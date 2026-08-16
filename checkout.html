@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إتمام الشراء - Checkout</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f8fafc; margin: 0; padding: 20px; }
+        .container { max-width: 450px; margin: 30px auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
+        h2 { text-align: center; color: #1e293b; }
+        .form-group { margin-bottom: 15px; text-align: right; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; }
+        .form-group input { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; }
+        .btn-submit { width: 100%; padding: 12px; background-color: #16a34a; color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; }
+        .btn-submit:hover { background-color: #15803d; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>📋 بيانات الشحن والتوصيل</h2>
+        <form action="thank-you.html" method="GET">
+            <div class="form-group">
+                <label>الاسم بالكامل:</label>
+                <input type="text" name="name" required placeholder="أدخل اسمك الكامل">
+            </div>
+            <div class="form-group">
+                <label>رقم الهاتف:</label>
+                <input type="tel" name="phone" required placeholder="01xxxxxxxxx">
+            </div>
+            <div class="form-group">
+                <label>العنوان التفصيلي:</label>
+                <input type="text" name="address" required placeholder="المدينة، الشارع، رقم المبنى">
+            </div>
+            <button type="submit" class="btn-submit" id="btn-purchase">تأكيد الطلب الآن (Purchase)</button>
+        </form>
+    </div>
+
+</body>
+</html>
