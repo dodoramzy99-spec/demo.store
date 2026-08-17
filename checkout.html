@@ -1,49 +1,23 @@
-<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head> <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-THBW5JH9');</script>
-<!-- End Google Tag Manager -->
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إتمام الشراء - Checkout</title>
+    <title>صفحة الدفع - Checkout</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f8fafc; margin: 0; padding: 20px; }
-        .container { max-width: 450px; margin: 30px auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
-        h2 { text-align: center; color: #1e293b; }
-        .form-group { margin-bottom: 15px; text-align: right; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; }
-        .form-group input { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; }
-        .btn-submit { width: 100%; padding: 12px; background-color: #16a34a; color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; }
-        .btn-submit:hover { background-color: #15803d; }
+        body { font-family: sans-serif; text-align: center; padding: 50px; background: #f8f9fa; }
+        .card { background: white; padding: 30px; border-radius: 10px; max-width: 400px; margin: auto; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        input { width: 90%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 5px; }
+        .btn { padding: 12px 20px; background: #17a2b8; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; width: 95%; margin-top: 10px; }
     </style>
 </head>
-<body> <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THBW5JH9"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-    <div class="container">
-        <h2>📋 بيانات الشحن والتوصيل</h2>
+<body>
+    <div class="card">
+        <h2>إتمام الشراء (Checkout)</h2>
         <form action="thank-you.html" method="GET">
-            <div class="form-group">
-                <label>الاسم بالكامل:</label>
-                <input type="text" name="name" required placeholder="أدخل اسمك الكامل">
-            </div>
-            <div class="form-group">
-                <label>رقم الهاتف:</label>
-                <input type="tel" name="phone" required placeholder="01xxxxxxxxx">
-            </div>
-            <div class="form-group">
-                <label>العنوان التفصيلي:</label>
-                <input type="text" name="address" required placeholder="المدينة، الشارع، رقم المبنى">
-            </div>
-            <button type="submit" class="btn-submit" id="btn-purchase">تأكيد الطلب الآن (Purchase)</button>
+            <input type="text" placeholder="الاسم بالكامل" required><br>
+            <input type="tel" placeholder="رقم الهاتف" required><br>
+            <button type="submit" id="purchase-btn" class="btn">تأكيد الشراء (Purchase)</button>
         </form>
     </div>
-
 </body>
 </html>
