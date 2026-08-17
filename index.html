@@ -1,65 +1,40 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head> <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-THBW5JH9');</script>
-<!-- End Google Tag Manager -->
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>متجر التدريب - الصفحة الرئيسية</title>
+    <!-- Google Tag Manager Code بيتحط هنا من خلالك لو حابب -->
     <style>
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f8fafc; margin: 0; padding: 20px; }
-        .header { text-align: center; margin-bottom: 30px; }
-        .products-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; max-width: 1000px; margin: auto; }
-        .product-card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; width: 280px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .product-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
-        .product-card h3 { font-size: 18px; margin: 10px 0 5px; color: #1e293b; }
-        .price { font-size: 20px; color: #16a34a; font-weight: bold; margin-bottom: 15px; }
-        .btn { display: block; width: 100%; padding: 10px 0; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; text-decoration: none; box-sizing: border-box; }
-        .btn-add { background-color: #2563eb; color: white; margin-bottom: 8px; }
-        .btn-checkout { background-color: #16a34a; color: white; }
+        body { font-family: sans-serif; text-align: center; padding: 40px; background-color: #f4f4f9; }
+        .card { background: white; padding: 20px; border-radius: 12px; max-width: 40px; margin: auto; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .btn { padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; margin: 8px; font-weight: bold; }
+        .btn-add { background-color: #28a745; color: white; }
+        .btn-checkout { background-color: #007bff; color: white; }
+        input { padding: 10px; width: 80%; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; }
     </style>
 </head>
-<body> <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THBW5JH9"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<body>
 
-    <div class="header">
-        <h1>🛍️ متجر التكنولوجيا العصرية</h1>
-        <p>اختر من أحدث المنتجات واختبر تجربة الشراء والتتبع الحقيقية</p>
-    </div>
+    <div class="card">
+        <h2>منتج تجريبي للعرض</h2>
+        <p>السعر: 500 جنيه</p>
+        
+        <!-- زر إضافة إلى السلة -->
+        <button id="add-to-cart-btn" class="btn btn-add">إضافة إلى السلة</button>
+        
+        <hr style="margin: 20px 0; border: 0.5px solid #eee;">
 
-    <div class="products-grid">
-        <!-- المنتج الأول -->
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="ساعة ذكية">
-            <h3>ساعة ذكية - Smart Watch</h3>
-            <div class="price">750 ج.م</div>
-            <button class="btn btn-add" onclick="alert('تمت إضافة الساعة للسلة!')">إضافة إلى السلة (AddToCart)</button>
-            <a href="checkout.html?product=SmartWatch&price=750" class="btn btn-checkout">شراء الآن (Checkout)</a>
-        </div>
-
-        <!-- المنتج الثاني -->
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" alt="سماعة لاسلكية">
-            <h3>سماعة بلوتوث - Wireless Headphones</h3>
-            <div class="price">1,200 ج.م</div>
-            <button class="btn btn-add" onclick="alert('تمت إضافة السماعة للسلة!')">إضافة إلى السلة (AddToCart)</button>
-            <a href="checkout.html?product=Headphones&price=1200" class="btn btn-checkout">شراء الآن (Checkout)</a>
-        </div>
-
-        <!-- المنتج الثالث -->
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500" alt="حذاء رياضي">
-            <h3>حذاء رياضي - Running Shoes</h3>
-            <div class="price">950 ج.م</div>
-            <button class="btn btn-add" onclick="alert('تمت إضافة الحذاء للسلة!')">إضافة إلى السلة (AddToCart)</button>
-            <a href="checkout.html?product=Shoes&price=950" class="btn btn-checkout">شراء الآن (Checkout)</a>
-        </div>
+        <!-- نموذج الشراء وبدء الطلب -->
+        <h3>بيانات الشراء</h3>
+        <form action="thank-you.html" method="GET">
+            <input type="text" name="name" placeholder="الاسم بالكامل" required><br>
+            <input type="tel" name="phone" placeholder="رقم الهاتف" required><br>
+            <input type="text" name="address" placeholder="العنوان" required><br>
+            
+            <!-- زر إتمام الشراء / InitiateCheckout -->
+            <button type="submit" id="checkout-btn" class="btn btn-checkout">إتمام الطلب الآن</button>
+        </form>
     </div>
 
 </body>
